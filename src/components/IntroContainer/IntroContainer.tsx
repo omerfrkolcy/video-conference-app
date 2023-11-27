@@ -99,8 +99,11 @@ const IntroContainer = (props: IntroContainerProps) => {
           <div className={classes.swooshContainer}>
             <div className={classes.logoContainer}>
               <VideoLogo />
-              <Typography variant="h6" className={classes.title}>
+              <Typography variant="subtitle1" className={classes.title}>
                 Video Conference App
+              </Typography>
+              <Typography variant="subtitle2" className={classes.title}>
+                GitHub: omerfrkolcy/video-conference-app
               </Typography>
             </div>
           </div>
