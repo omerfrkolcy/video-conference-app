@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles, Theme, Typography } from '@material-ui/core';
 import Swoosh from './swoosh';
 import VideoLogo from './VideoLogo';
-import TwilioLogo from './TwilioLogo';
 import { useAppState } from '../../state';
 import UserMenu from './UserMenu/UserMenu';
 import { useLocation } from 'react-router-dom';
@@ -64,12 +63,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       },
     },
   },
-  twilioLogo: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    margin: '20px',
-  },
   content: {
     background: 'white',
     width: '100%',
@@ -100,7 +93,6 @@ const IntroContainer = (props: IntroContainerProps) => {
 
   return (
     <div className={classes.background}>
-      <TwilioLogo className={classes.twilioLogo} />
       {user && location.pathname !== '/login' && <UserMenu />}
       <div className={classes.container}>
         <div className={classes.innerContainer}>
@@ -108,7 +100,7 @@ const IntroContainer = (props: IntroContainerProps) => {
             <div className={classes.logoContainer}>
               <VideoLogo />
               <Typography variant="h6" className={classes.title}>
-                Twilio Programmable Video
+                Video Conference App
               </Typography>
             </div>
           </div>
