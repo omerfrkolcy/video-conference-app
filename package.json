@@ -49,14 +49,13 @@
     "typescript": "^4.6.2"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-essentials": "^6.5.10",
-    "@storybook/addon-links": "^6.5.10",
-    "@storybook/builder-webpack5": "^6.5.10",
-    "@storybook/manager-webpack5": "^6.5.10",
-    "@storybook/node-logger": "^6.5.10",
-    "@storybook/preset-create-react-app": "^4.1.2",
-    "@storybook/react": "^6.5.10",
+    "@storybook/addon-actions": "^8.0.0-alpha.0",
+    "@storybook/addon-essentials": "^8.0.0-alpha.0",
+    "@storybook/addon-links": "^8.0.0-alpha.0",
+    "@storybook/node-logger": "^8.0.0-alpha.0",
+    "@storybook/preset-create-react-app": "^8.0.0-alpha.0",
+    "@storybook/react": "^8.0.0-alpha.0",
+    "@storybook/react-webpack5": "^8.0.0-alpha.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/react-hooks": "^3.2.1",
@@ -75,6 +74,7 @@
     "puppeteer": "latest",
     "react-test-renderer": "^16.12.0",
     "start-server-and-test": "^1.10.8",
+    "storybook": "^8.0.0-alpha.0",
     "ts-jest": "^27.0.1",
     "webpack": "^5.74.0"
   },
@@ -101,8 +101,8 @@
     "cypress:run": "cypress run --browser chrome",
     "cypress:ci": "cross-env CYPRESS_baseUrl=http://localhost:8081 start-server-and-test server http://localhost:8081 cypress:run",
     "deploy:twilio-cli": "cross-env REACT_APP_SET_AUTH=passcode npm run build && twilio rtc:apps:video:deploy --authentication=passcode --app-directory ./build",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "storybook": "storybook dev -p 6006 -s public",
+    "build-storybook": "storybook build -s public"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -116,10 +116,7 @@
       {
         "files": [
           "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
+        ]
       }
     ]
   },
